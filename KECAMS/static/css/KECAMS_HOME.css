@@ -1,0 +1,150 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.header{
+    background-image: url('../image/mainbg1.jpg');
+    background-size: cover;
+    background-position: center;
+    max-width: 100%;
+    height: 31vh;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    
+}
+
+.firsthalf{
+    width: 30%;
+    text-align: center;
+    align-items: center;
+}
+.header .image img{
+    width: 60%;
+    height: 150px;
+    border: 2px solid whitesmoke;
+    border-radius: 30px;
+}
+
+/*HEADER MENU START*/
+.secondhalf{
+    margin-left:100px ;
+    text-align: center;
+    align-items: center;
+    width: 50%;
+}
+
+.navbar{
+
+    display: flex;
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+
+}
+.nav-list{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-left: 15px;
+    margin: 5px;
+    
+
+}
+.logo img{
+    width: 100px;
+    border-radius: 50%;
+    
+}
+
+.nav-list li{
+    list-style: none;
+    width: 100px;
+    padding: 15px;
+}
+
+.nav-list li a{
+    text-decoration: none;
+    font-weight: 600;
+    color:rgb(4, 6, 1);
+}
+
+.nav-list li a:hover{
+    text-decoration: none;
+    color: peru;
+}
+
+.background{
+    backdrop-filter: blur(100px);
+    background-size: cover;
+    background-blend-mode: darken; 
+}
+
+
+
+/*HEADER MENU CLOSE*/
+
+.row{
+    display: flex;
+    max-width: 90%;
+    margin:auto;
+}
+.col{
+    box-shadow: 10px 10px 54px -6px rgba(0,0,0,0.75);
+    margin: 35px 20px 25px;
+    width: 40%;
+    height: 55vh;
+    text-align: center;
+    justify-content: center;
+    background:url('../image/mainbg.png');
+}
+.col img{
+    width: 90px;
+    height: 90px;
+    margin: 15px 15px 5px 15px;
+}
+.col p{
+    text-align: justify;
+    margin: 15px;
+    font-size: larger;
+}
+
+button{
+    width: 50%;
+    height: 40px;
+    border-radius: 40px;
+    background: cornsilk;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+button:hover{
+    background-color: aquamarine;
+}
+button a{
+    text-decoration: none;
+    font-size: larger;
+    font-weight: 600;
+}
+
+
+.footer{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+.text-footer{
+    text-align: center;
+    padding: 10px 0px;
+    color:aliceblue;
+}

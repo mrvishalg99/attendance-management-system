@@ -1,0 +1,95 @@
+<style>
+    .drop_down{
+        width: 101%;
+        height: 70px;
+        margin: 0px auto;
+        
+    }
+        .drop_down ul {
+            padding: 0px;
+        }
+        
+        .drop_down ul li{
+            
+            float: left;
+            color: white;
+            padding: 0px;
+            list-style: none;
+            width: 190px;
+            height: 45px; 
+            line-height: 45px;
+            background-color: black;
+            font-size: 25px;
+            text-align: center;
+            opacity: 0.6;
+        }
+        .drop_down ul li ul{
+            
+            display: none;
+        }
+        
+        .drop_down ul li:hover > ul{
+            
+            display: block;
+        } 
+    body{
+        background-color: lightcyan;
+    }
+        .drop_down ul li:hover{
+
+            background-color: greenyellow;
+            opacity: 0.9;
+        }
+        .drop_down ul li ul li {
+            position: relative;
+        }
+        .drop_down ul li  ul li ul{
+            position: absolute;
+            left: 200px;
+            top: 0px;
+        }
+        a {
+            color:white;
+            text-decoration:none;
+        }
+</style>
+<div class="drop_down">
+    <ul>
+        <li><a href="{% url 'Hod_home' %}">Dashboard</a></li>
+        <li>Teacher
+            <ul>
+                <li><a href="{% url 'add_teacher' %}">Add Teacher</a></li>
+                <li> View Teacher</li>
+            </ul> 
+        </li>
+            <li>Student
+            <ul>
+                <li><a href="{% url 'add_student' %}">Add Student</a></li>
+                <li><a href="{% url 'view_student' %}">View Student</a></li>
+            </ul> 
+        </li>
+            <li>Subject
+            <ul>
+                <li><a href="{% url 'add_subject' %}">Add Subject</a></li>
+                <li> View Subject</li>
+            </ul> 
+        </li>
+            <li>Session
+            <ul>
+                <li>Add Session</li>
+                <li> View Session</li>
+            </ul> 
+        </li>
+            <li>Branch
+            <ul>
+                <li>Add Branch</li>
+                <li> View Branch</li>
+            </ul> 
+        </li>
+            <li>Attendance
+            <ul>
+                <li><a href="">View Attendance</a></li>
+            </ul> 
+        </li>
+        <li><a href="{% url 'logout' %}">Log Out</a></li>
+</div>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{% static 'css/Stu_Regs.css' %}">
+    <script src="https://kit.fontawesome.com/c39b059ac2.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student_Registration</title>
+</head>
+<body>
+    <section class="container">
+        <div class="form-box">
+            {% if messages %}
+                <div class="mgs ">
+                    {% for message in messages%}
+                        {{message}}
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <h1 id="title">Student Registration Form</h1>   
+            <form method="POST" id='studentForm' action="{% url 'add_student' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="input-group">                   
+                    <div class="input-field" id="nameField">
+                        <i class="fa-solid fa-user-tie"></i>
+                        <input type="text" placeholder="Name" name='name'>
+                    </div>
+                    <div class="input-field" id="emailField">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" placeholder="E-mail" name='email'>
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-id-badge"></i>
+                        <input type="text" placeholder="Registration Number" name='registration'>
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-sharp fa-solid fa-person"></i>
+                        <input type="text" placeholder="Father's Name" name='father_name'>
+                    </div>
+                    <div class="group">
+                        <div class="input-field">
+                            <i class="fa-solid fa-code-branch"></i>
+                            <label class="branch">Branch</label>
+                            <select name="branch_id">
+                                <option disable>Select Branch</option>
+                                {% for i in branch %}
+                                 <option value='{{i.id}}'>{{i.branch}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <i class="fa-sharp fa-solid fa-o"></i>
+                            <label class="Blood">Blood Group</label>
+                            <select name="blood_group">
+                                <option disable>Select Blood Group</option>
+                                <option>A+</option>
+                                <option>A-</option>
+                                <option>B+</option>
+                                <option>B-</option>
+                                <option>O+</option>
+                                <option>O-</option>
+                                <option>AB+</option>
+                                <option>AB-</option>
+                            </select>
+                        </div>                     
+                        <div class="input-field">
+                            <i class="fa-solid fa-business-time"></i>
+                            <label class="session">Session</label>
+                            <select name="session_id">
+                                <option disable>Select Session</option>
+                                {% for i in session %}
+                                 <option value='{{i.id}}'>{{i.session}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="input-field">
+                            <i class="fa-sharp fa-solid fa-o"></i>
+                            <label class="semester">Semester</label>
+                            <select name="semester">
+                                <option disable>Select Semester</option>
+                                <option>1st</option>
+                                <option>2nd</option>
+                                <option>3rd</option>
+                                <option>4th</option>
+                                <option>5th</option>
+                                <option>6th</option>
+                                <option>7th</option>
+                                <option>8th</option>
+                            </select>
+                        </div> 
+                        <div class="input-field">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="text" placeholder="Mobile Number" name='mobile'>
+                        </div>                         
+                        <div class="input-field">
+                            <i class="fa-solid fa-person-half-dress"></i>
+                            <label class="Gender">Gender</label>
+                            <select name="gender">
+                                <option disable>Select Gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                            </select>
+                        </div>                       
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <input type="text" placeholder="Address" name='address'>
+                    </div>
+                    <div class="profile input-field">
+                        <i class="fa-solid fa-address-card"></i>
+                        <p class="text"> &nbsp; &nbsp;Upload Profile Picture </p>
+                        <input type="file" id="myFile" name="profile_pic">
+                    </div>
+                    <div class="password">
+                        <div class="input-field space">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <input type="password" placeholder="Password" name='password1'>
+                        </div>
+                        <div class="input-field space">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <input type="password" placeholder="Confirm Password" name='password2'>
+                        </div> 
+                    </div>                   
+                </div>
+                <div class="btn-field">
+                    <button type="submit" value="Submit">Registration</button>
+                    <button type="button" id="signin" onclick="document.location='{% url 'Hod_home' %}'">Home</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <style>
+        .mgs{
+            margin:10px 100px 10px 100px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: aqua;
+            color: red;
+            font-size: 25px
+        }
+    </style>
+</body>
+</html>

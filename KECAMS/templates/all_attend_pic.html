@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/all_attend_pic.css' %}">
+    <title>All Images</title>
+</head>
+<body>
+    <div class="name">
+        <label for=""><h2>All Attendance Images</h2></label>
+    </div>
+    <div class="picture">
+        {% for i in pic %}
+            <img src="/media/{{i.attend_pic}}" alt="logo">
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/Emp_home.css' %}">
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/c39b059ac2.js" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Update</title>
+</head>
+<body onload="initClock()">
+    {% include 'teacher_navbar.html' %}
+    {% comment %} <nav class="navbar background1">  <!--header-->
+        
+        <ul class="nav-list another">
+            <div class="logo"> 
+                <img src="{% static 'image/logo1.jfif' %}" alt="logo">
+            </div>
+            <li>
+                <a href="{% url 'Teacher_home' %}">Home</a>
+            </li>
+            <li>
+                <a href="{% url 'add_teacher' %}">Add Teacher</a>
+            </li>
+            <li>
+                <a href="{% url 'add_student' %}">Add Student</a>
+            </li>
+            <li>
+                <a href="{% url 'add_subject' %}">Add Subject</a>
+            </li>
+            <li>
+                <a href="{% url 'take_attendance' %}">Add Attendance</a>
+            </li>
+            <li>
+                <a href="{% url 'view_student' %}">View Student</a>
+            </li>
+            <li>
+                <a href="{% url 'logout' %}">Log Out</a>
+            </li>
+        </ul>
+        <div class="rightnav">
+            <input type="text" name="search" id="search">
+            <button class="btn btn-sm">Search</button>
+        </div>
+    </nav> <!--End-header--> {% endcomment %}
+<section class="background firstSection">
+    <div class="box-main">
+        <div class="firsthalf">
+            <p class="big-text">
+                <strong>Welcome</strong>&nbsp<span>{{user.name}}</span> 
+            </p>
+        </div>
+        <div class="secondhalf">
+                <img src="/media/{{user.profile.profile_pic}}" alt="logo">
+        </div>
+    </div>
+</section>
+{% if messages %}
+    <div class=" alert alert-success mt-3">
+        {% for message in messages%}
+            {{message}}
+        {% endfor %}
+    </div>
+{% endif %}
+
+<footer class="footer background1">
+    <div class="text-footer">    
+        <p>
+            Copyright &copy; 2022 - Katihar Engineering College
+        </p>
+    </div>
+</footer>
+<script type="text/javascript">
+    function updateClock()
+    {
+        var now= new Date();
+        var dname=now.getDay(),
+        mo=now.getMonth(),
+        dnum=now.getDate(),
+        yr=now.getFullYear();
+
+        var months=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+        var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+        var ids=["dayname","day","month","year"];
+
+        var values=[week[dname],dnum,months[mo],yr];
+
+        for(var i=0; i<ids.length; i++)
+            document.getElementById(ids[i]).firstChild.nodeValue=values[i];
+    }
+    function initClock()
+    {
+        updateClock();
+        window.setInterval("updateClock()",1)
+    }
+
+</script>
+</body>
+</html>

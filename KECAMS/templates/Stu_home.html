@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static '/css/stu_home.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Record</title>
+</head>
+<body>
+    {% include 'stu_navbar.html' %}
+
+<section class="background firstSection">
+    <div class="box-main">
+        <div class="firsthalf">
+            <p class="big-text">
+                <strong>Welcome</strong>&nbsp<span>{{user.name}}</span> 
+            </p>
+        </div>
+        <div class="secondhalf">
+                <img src="/media/{{user.stu_profile.profile_pic}}" alt="logo">
+        </div>
+    </div>
+</section>
+
+<footer class="footer background">
+    <div class="text-footer">    
+        <p>
+            Copyright &copy; 2022 - Katihar Engineering College
+        </p>
+    </div>
+</footer>
+</body>
+</html>

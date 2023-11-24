@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.name{
+    background-color: #23d1ce;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border: 3px solid #d81717;
+    border-radius: 10px;
+}
+
+.name label{
+    font-size: 20px;
+    color: red;
+}
+
+.picture{
+    width: 30%;
+    display: flex;
+}
+
+.picture img{
+    width: 55%;
+    border: 3px solid white;
+    border-radius: 28px;
+    margin: auto;
+    margin-left: 20px;
+}

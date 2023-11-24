@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{% static '/css/KECAMS_HOME.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c39b059ac2.js" crossorigin="anonymous"></script>
+    <title>KECAMS-HOME</title>
+    
+</head>
+<body>
+    <div class="header">
+        <div class="image firsthalf">
+            <img src="{% static '/image/KECAMS1.png' %}" alt="logo">
+        </div>
+        <div class="navbar background secondhalf">  <!--menu-->
+            <ul class="nav-list another">
+                <div class="logo"> 
+                    <img src="{% static '/image/logo1.jfif' %}" alt="logo">
+                </div>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="#">Contact us</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Blog</a>
+                </li>
+                <li>
+                    <a href="#">College WebSite</a>
+                </li>
+            </ul>
+        </div> <!--End-menu-->
+    </div>
+    <section class="content">
+        <div class="row">
+            <div class="col login">
+                <img src="{% static '/image/stu_login.png' %}" alt="Student logo">
+                <h2>Student Login</h2>
+                <p>Login with your UID and Password to access your Student Services and Account. The KECAMS will keep a record of your progress and keep you apprised of the latest updates.</p>
+                <a href="{% url 'login' %}"> <button>Login</button></a>
+            </div>
+            <div class="col login">
+                <img src="{% static '/image/facul_login.png' %}" alt="Faculty logo">
+                <h2>
+                    Faculty Login
+                </h2>
+                <p>Login with your Email and Password to access your Faculty Services and Account. The KECAMS will keep a record of your progress and keep you apprised of the latest updates.</p>
+                <a href="{% url 'login' %}"> <button>Login</button></a>
+            </div>
+            <div class="col login">
+                <img src="{% static '/image/staff_login.jpg' %}" alt="Staff logo">
+                <h2>
+                    Staff Login
+                </h2>
+                <p>For Admission Staff only. Use your Employee Code and Password to log in for admission related services. The KECAMS will keep a record of your progress.</p>
+                <a href="{% url 'login' %}"> <button>Login</button></a>
+            </div>
+    </section>
+    <footer class="footer background">
+        <div class="text-footer">    
+            <p>
+                Copyright &copy; 2022 - Katihar Engineering College
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
